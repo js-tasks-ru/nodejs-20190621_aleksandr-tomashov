@@ -1,5 +1,14 @@
 function sum(a, b) {
-  /* ваш код */
+  try {
+    if(Number.isFinite(a) && Number.isFinite(b)){
+      return a + b
+    }
+    else{
+      throw new typeError
+    }
+  } catch{
+      return 'typeError';
+  }
 }
 
 module.exports = sum;
