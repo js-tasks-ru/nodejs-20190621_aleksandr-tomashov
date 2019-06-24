@@ -1,14 +1,11 @@
 function sum(a, b) {
-  try {
+
     if(Number.isFinite(a) && Number.isFinite(b)){
       return a + b
     }
-    else{
-      throw new typeError
-    }
-  } catch{
-      return 'typeError';
-  }
+        
+    throw new TypeError(`isn't correct arguments`);
+  
 }
 
 module.exports = sum;
