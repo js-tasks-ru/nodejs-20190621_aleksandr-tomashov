@@ -4,16 +4,21 @@ const os = require('os');
 class LineSplitStream extends stream.Transform {
   constructor(options) {
     super(options);
-    this.utf = options.encoding
-    this.result = '';
+     this.result = '';
   }
 
   _transform(chunk, encoding, callback) {
-    this.result += chunk;
-    callback(null, chunk)
+    this.result += chunk.toString();
+    
+    callback();
   }
 
   _flush(callback) {
+    this.result
+        .split(os.EOL) 
+        .map(i => { this.push(i); });
+    
+    callback();
   }
 }
 
