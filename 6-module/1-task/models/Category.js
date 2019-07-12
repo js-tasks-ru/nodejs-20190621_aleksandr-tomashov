@@ -23,8 +23,4 @@ const category = new Category({
   ]    
 });
 
-
-
-console.log(category)
-
 module.exports = connection.model('Category', categorySchema);
